@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>System Alert</title>
+  <title>Hacking Simulation</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="alert" style="display:none;">
-    <h2>SYSTEM ALERT</h2>
-    <p id="systemMessage">Your system has been compromised by a malicious payload.</p>
-    <p>Immediate action is required to prevent further damage.</p>
-    <button id="restart">Restart System</button>
-    <button id="scan">Run Virus Scan</button>
-  </div>
+  <div id="console"></div>
 
   <!-- Hidden audio elements -->
-  <audio id="beepSound" src="beep.mp3" preload="auto"></audio>
-  <audio id="systemFailure" src="system-failure.mp3" preload="auto"></audio>
+  <audio id="hackingSound" src="hacking.mp3" preload="auto" loop></audio>
+  <audio id="systemBeep" src="beep.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
