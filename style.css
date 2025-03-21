@@ -15,7 +15,7 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-#restart {
+#restart, #scan {
   background-color: red;
   color: white;
   border: none;
@@ -23,6 +23,6 @@ body {
   cursor: pointer;
 }
 
-#restart:hover {
+#restart:hover, #scan:hover {
   background-color: #ff3333;
 }
