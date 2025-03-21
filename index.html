@@ -9,40 +9,19 @@
 <body>
   <div class="container">
     <h1 class="warning">SYSTEM COMPROMISED</h1>
-    <p class="message">Your system has been infected by a malicious payload.</p>
+    <p class="message">Yazan Ballani, your system has been infected by a malicious payload.</p>
     <p class="message">Attempting to resolve the issue...</p>
     <div class="loading-bar">
       <div class="progress"></div>
     </div>
     <p class="footer">Do not turn off your computer. Data loss is imminent.</p>
+    <button id="playSound">Click to Play Sound</button>
   </div>
 
   <!-- Hidden audio element -->
   <audio id="beepSound" src="beep.mp3" preload="auto"></audio>
 
   <!-- JavaScript -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const beepSound = document.getElementById("beepSound");
-
-      // Play beep sound immediately when the page loads
-      beepSound.play().catch(error => {
-        console.error("Audio autoplay was blocked by the browser:", error);
-      });
-
-      // Simulate loading bar animation
-      const progress = document.querySelector(".progress");
-      let width = 0;
-      const interval = setInterval(() => {
-        if (width >= 100) {
-          clearInterval(interval);
-          document.querySelector(".message").textContent = "System failure detected. Shutting down...";
-        } else {
-          width++;
-          progress.style.width = width + "%";
-        }
-      }, 50); // Simulates progress bar speed
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
