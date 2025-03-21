@@ -3,16 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hacking Simulation</title>
+  <title>System Compromised</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="console"></div>
+  <div class="container">
+    <h1 class="warning">SYSTEM COMPROMISED</h1>
+    <p class="message">Your system has been infected by a malicious payload.</p>
+    <p class="message">Attempting to resolve the issue...</p>
+    <div class="loading-bar">
+      <div class="progress"></div>
+    </div>
+    <p class="footer">Do not turn off your computer. Data loss is imminent.</p>
+  </div>
 
-  <!-- Hidden audio elements -->
-  <audio id="hackingSound" src="hacking.mp3" preload="auto" loop></audio>
-  <audio id="systemBeep" src="beep.mp3" preload="auto"></audio>
+  <!-- Hidden audio element -->
+  <audio id="beepSound" src="beep.mp3" preload="auto"></audio>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const beepSound = document.getElementById("beepSound");
+
+      // Play beep sound immediately when the page loads
+      beepSound.play().catch(error => {
+        console.error("Audio autoplay was blocked by the browser:", error);
+      });
+
+      // Simulate loading bar animation
+      const progress = document.querySelector(".progress");
+      let width = 0;
+      const interval = setInterval(() => {
+        if (width >= 100) {
+          clearInterval(interval);
+          document.querySelector(".message").textContent = "System failure detected. Shutting down...";
+        } else {
+          width++;
+          progress.style.width = width + "%";
+        }
+      }, 50); // Simulates progress bar speed
+    });
+  </script>
 </body>
 </html>
