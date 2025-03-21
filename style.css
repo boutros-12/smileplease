@@ -1,13 +1,51 @@
+/* General styles */
 body {
-  background-color: black;
-  color: green;
-  font-family: "Courier New", Courier, monospace;
-  overflow: hidden;
   margin: 0;
   padding: 0;
+  background-color: black;
+  color: red;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-#console {
-  white-space: pre-wrap;
-  padding: 20px;
+.container {
+  text-align: center;
+}
+
+.warning {
+  font-size: 3rem;
+  animation: blinkText 1s infinite; /* Blinking effect for warning text */
+}
+
+.message {
+  font-size: 1.5rem;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+/* Loading bar styles */
+.loading-bar {
+  margin: 20px auto;
+  width: 80%;
+  height: 20px;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background-color: red;
+  border-radius: inherit;
+}
+
+/* Blinking text animation */
+@keyframes blinkText {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
