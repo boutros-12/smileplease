@@ -9,13 +9,15 @@
 <body>
   <div id="alert" style="display:none;">
     <h2>SYSTEM ALERT</h2>
-    <p>Your system has been compromised by a malicious payload.</p>
+    <p id="systemMessage">Your system has been compromised by a malicious payload.</p>
     <p>Immediate action is required to prevent further damage.</p>
     <button id="restart">Restart System</button>
+    <button id="scan">Run Virus Scan</button>
   </div>
 
-  <!-- Hidden audio element -->
+  <!-- Hidden audio elements -->
   <audio id="beepSound" src="beep.mp3" preload="auto"></audio>
+  <audio id="systemFailure" src="system-failure.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
