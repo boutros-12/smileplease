@@ -1,60 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const consoleElement = document.getElementById("console");
-  const hackingSound = document.getElementById("hackingSound");
-  const systemBeep = document.getElementById("systemBeep");
+document.addEventListener("DOMContentLoaded", function () {
+  const beepSound = document.getElementById("beepSound");
+  const playButton = document.getElementById("playSound");
 
-  // Play hacking sound continuously
-  hackingSound.play().catch(error => {
-    console.error("Audio autoplay was blocked by the browser:", error);
-  });
-
-  // Play beep sound immediately
-  systemBeep.play().catch(error => {
-    console.error("Beep sound autoplay was blocked by the browser:", error);
-  });
-
-  // Simulate hacking by typing messages
-  const messages = [
-    "Initializing hack tool...",
-    "Connecting to target server...",
-    "Bypassing firewall...",
-    "Accessing database...",
-    "Downloading sensitive data...",
-    "Injecting malware...",
-    "HACK COMPLETE. SYSTEM COMPROMISED."
-  ];
-
-  let currentMessageIndex = 0;
-
-  function typeMessage(message, callback) {
-    let index = 0;
-
-    function type() {
-      if (index < message.length) {
-        consoleElement.textContent += message[index];
-        index++;
-        setTimeout(type, Math.random() * 100); // Random typing speed
-      } else if (callback) {
-        consoleElement.textContent += "\n";
-        callback();
-      }
-    }
-
-    type();
-  }
-
-  function startHacking() {
-    if (currentMessageIndex < messages.length) {
-      typeMessage(messages[currentMessageIndex], () => {
-        currentMessageIndex++;
-        setTimeout(startHacking, 500); // Delay between messages
-      });
+  // Simulate loading bar animation
+  const progress = document.querySelector(".progress");
+  let width = 0;
+  const interval = setInterval(() => {
+    if (width >= 100) {
+      clearInterval(interval);
+      document.querySelector(".message").textContent = "System failure detected. Shutting down...";
     } else {
-      consoleElement.textContent += "\nPress any key to exit...\n";
-      document.addEventListener("keydown", () => location.reload());
+      width++;
+      progress.style.width = width + "%";
     }
-  }
+  }, 50); // Simulates progress bar speed
 
-  // Start the simulation
-  startHacking();
+  // Play beep sound when button is clicked
+  playButton.addEventListener("click", function() {
+    beepSound.play();
+    alert("Yazan Ballani, please contact your system administrator for assistance.");
+  });
 });
