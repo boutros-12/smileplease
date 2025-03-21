@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
 }
 
 .container {
@@ -26,6 +27,19 @@ body {
 
 .footer {
   margin-top: 20px;
+}
+
+#playSound {
+  margin-top: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#playSound:hover {
+  background-color: #ff3333;
 }
 
 /* Loading bar styles */
